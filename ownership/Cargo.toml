@@ -1,5 +1,5 @@
 [package]
-name = "branches"
+name = "ownership"
 version = "0.1.0"
 authors = ["Luis León <luis.leon@pm.me>"]
 edition = "2018"
