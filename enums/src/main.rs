@@ -26,7 +26,10 @@ fn main() {
 
     let some_3 = Some(String::from("Hello"));
 
-    let string = some_3.unwrap();
+    let string = match some_3 {
+        Some(val) => val,
+        None => String::from("Nothing"),
+    };
 
     println!("some_1: {:#?}", some_1);
     println!("x: {:?}", x);
@@ -51,6 +54,19 @@ fn main() {
     println!("penny: {}", get_coin_value(penny));
     println!("quarter: {}", get_coin_value(quarter));
     println!("nickle: {}", get_coin_value(nickle));
+
+    // Using if let
+    let some_4 = Some(4);
+
+    if let Some(i) = some_4 {
+        println!("Matched with if let!");
+    }
+
+    if let Some(5) = some_4 {
+        println!("Matched");
+    } else {
+        println!("Didn't match because it's a 5");
+    }
 }
 
 fn get_coin_value(coin: Coin) -> u8 {
